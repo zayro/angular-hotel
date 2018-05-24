@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  API_URL: `http://localhost`
+  API_URL: `https://angular-hotel.herokuapp.com`
 };
