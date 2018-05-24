@@ -13,7 +13,7 @@
 @include mat-core();
 $primary: mat-palette($mat-blue, 900);
 $accent:  mat-palette($mat-light-blue, 600, 100, 800);
-$warn:    mat-palette($mat-red, 600);
+$warn:    mat-palette($mat-orange, 600);
 $theme: mat-light-theme($primary, $accent, $warn);
 @include angular-material-theme($theme);
 
@@ -22,6 +22,10 @@ $font-primary: 'Roboto', sans-serif;
 $font-secundary: 'Lato', sans-serif;
 
 $primary-color: #333;
+
+/**
+* GLOBAL THEME
+*/
 
 html, body {
   margin: 0px;
@@ -35,4 +39,16 @@ body{
 
 .top-container{
   margin-top: 20px;
+}
+
+.accent-color {
+  color: mat-color($accent) !important;
+}
+
+.warn-color {
+  color: mat-color($warn) !important;
+}
+
+.link-color{
+  color:#0489B1;
 }

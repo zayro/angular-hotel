@@ -47,24 +47,28 @@ import {
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LayoutModule } from '@angular/cdk/layout';
 import {CdkTableModule} from '@angular/cdk/table';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap'; 
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgPipesModule } from 'ngx-pipes';
 
 // import components
 import { RootComponent } from './components/root/root.component';
 import { RoutingComponents, AppRoutingModule } from './app.routing';
+import { FilterPipe } from './pipe/filter.pipe';
 
 
 
 @NgModule({
   declarations: [
     RoutingComponents,
-    RootComponent
+    RootComponent,
+    FilterPipe
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     HttpClientModule,
     NgbModule.forRoot(),
+    NgPipesModule,
     FormsModule,
     ReactiveFormsModule,
     AppRoutingModule,
