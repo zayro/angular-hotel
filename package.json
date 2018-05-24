@@ -9,8 +9,9 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "db": "json-server --watch ./server/data/data.json",
-    "serverlocal":  "node ./server/server.ts",
-    "heroku-postbuild": "npm install && npm run build"
+    "serverlocal": "node ./server/server.ts",
+    "production": "ng build -c --prod",
+    "heroku-postbuild": "npm install && npm run production"
   },
   "private": true,
   "dependencies": {
