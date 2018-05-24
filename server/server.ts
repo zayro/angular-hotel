@@ -26,6 +26,38 @@ app.use(morgan('dev'));
 
 const port = process.env.PORT || 3000; // used to create, sign, and verify tokens
 
+// Route Access-Control-Allow-Origin
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', '*');
+  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Authorization');
+
+  if (req.method === 'OPTIONS') {
+    res.header('Access-Control-Allow-Methods', 'PUT, POST, PATCH, DELETE, GET');
+    return res.status(200).json({});
+  }
+  next();
+  return true;
+});
+
+
+// catch 404 and forward to error handler
+app.use(function(req, res, next) {
+  const err = new Error('Not Found');
+  err.status = 404;
+  next(err);
+});
+
+
+// production error handler
+// no stacktraces leaked to user
+app.use(function(err, req, res, next) {
+  res.status(err.status || 500);
+  res.render('error', {
+    message: err.message,
+    error: {'msj': 'ocurrio un problema'}
+  });
+});
+
 
 
 // =================================================================
