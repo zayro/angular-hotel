@@ -3,13 +3,13 @@
 
     <div class="col-sm-12  col-lg-3">
     <!-- menu que permite filtrar las listas de hoteles -->
-    <app-menu></app-menu>
+    <app-menu  (searchEvent)="Loadsearch($event)" (multFilterEvent)="LoadMultFilter($event)" [mobile]="mobile"  [show]="show" ></app-menu>
     </div>
 
 
     <div class="col-sm-12  col-lg-9">
     <!-- Componente Listado de Hoteles -->
-    <app-list [search]="Msearch" [MultFilter]="MMultFilter"  ></app-list>
+    <app-list [search]="HomeSearch" [MultFilter]="HomeMultFilter"   [mobile]="mobile"  [show]="show" ></app-list>
     </div>
 
   </div>

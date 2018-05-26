@@ -1,11 +1,9 @@
-import { Component, OnInit, HostListener, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, HostListener, Input, Output, EventEmitter } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 import { MatIconRegistry } from '@angular/material';
-import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
-
-
 
 import { Icon } from '../../class/icon';
+
 import { Funtions } from '../../class/funciones';
 
 import * as $ from 'jquery';
@@ -26,10 +24,6 @@ export interface Category {
 })
 export class MenuComponent extends Icon implements OnInit {
 
-  public show = true;
-
-  public mobile = false;
-
   funciones = new Funtions();
 
   search: string;
@@ -42,36 +36,42 @@ export class MenuComponent extends Icon implements OnInit {
 
   Valcheck: any = [];
 
-  @Output() messageEvent = new EventEmitter<any>();
+  category: Category[];
+
+  @Output() searchEvent = new EventEmitter<any>();
+  @Output() multFilterEvent = new EventEmitter<any>();
+
+  @Input() show: boolean;
+  @Input() mobile: boolean;
 
   SendSearch() {
-    this.messageEvent.emit(this.search);
+    console.log('SendSearch', this.search);
+    this.searchEvent.emit(this.search);
   }
 
   SendMultFilter() {
-    this.messageEvent.emit(this.MultFilter);
+    console.log('SendMultFilter', this.MultFilter);
+    this.multFilterEvent.emit(this.MultFilter);
   }
 
     constructor(
     iconRegistry: MatIconRegistry,
-    sanitizer: DomSanitizer,
-    breakpointObserver: BreakpointObserver
+    sanitizer: DomSanitizer
   ) {
     super(iconRegistry, sanitizer);
+    this.IconMenu = 'arrow_drop_down';
   }
-
-
-  category: Category[] = [
-    { icon: 'star', id: 'cinco', num: 5, check: false },
-    { icon: 'star', id: 'cuatro', num: 4, check: false },
-    { icon: 'star', id: 'tres', num: 3, check: false },
-    { icon: 'star', id: 'dos', num: 2, check: false },
-    { icon: 'star', id: 'uno', num: 1, check: false }
-  ];
-
 
   ngOnInit() {
     this.panelOpenState = false;
+
+    this.category = [
+      { icon: 'star', id: 'cinco', num: 5, check: false },
+      { icon: 'star', id: 'cuatro', num: 4, check: false },
+      { icon: 'star', id: 'tres', num: 3, check: false },
+      { icon: 'star', id: 'dos', num: 2, check: false },
+      { icon: 'star', id: 'uno', num: 1, check: false }
+    ];
   }
 
   FieldsChange(values: any) {
@@ -83,7 +83,7 @@ export class MenuComponent extends Icon implements OnInit {
       };
       this.Valcheck = [];
 
-      return true;
+      return this.SendMultFilter();
     }
 
     if (values.currentTarget.checked) {
@@ -96,15 +96,13 @@ export class MenuComponent extends Icon implements OnInit {
       }
     }
 
-    // const response =  this.FindArray(this.Valcheck);
-
     this.MultFilter = {
       stars: this.Valcheck
     };
 
-    // this.dataSource = this.multiFilter(this.dataSource, filters);
-  }
+    return this.SendMultFilter();
 
+  }
 
 
   toggle() {

@@ -1,7 +1,7 @@
 import { Component, OnInit, Input, HostListener, Output, EventEmitter } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 import { MatIconRegistry } from '@angular/material';
-import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
+
 
 import { HttpData } from '../../../services/http-data.service';
 
@@ -36,31 +36,9 @@ export class ListComponent extends Icon implements OnInit {
   constructor(
     iconRegistry: MatIconRegistry,
     sanitizer: DomSanitizer,
-    private api: HttpData,
-    breakpointObserver: BreakpointObserver
+    private api: HttpData
   ) {
     super(iconRegistry, sanitizer);
-
-    breakpointObserver
-      .observe([Breakpoints.HandsetLandscape, Breakpoints.HandsetPortrait])
-      .subscribe(result => {
-        if (result.matches) {
-          console.log(result);
-        }
-      });
-
-    const layoutChanges = breakpointObserver.observe('(max-width: 999px)');
-
-    layoutChanges.subscribe(result => {
-      if (result.matches) {
-        this.mobile = true;
-        this.show = false;
-      } else {
-        this.mobile = false;
-        this.show = true;
-      }
-
-    });
   }
 
 

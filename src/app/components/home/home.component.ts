@@ -1,5 +1,5 @@
-import { Component, OnInit, Input } from '@angular/core';
-
+import { Component, OnInit } from '@angular/core';
+import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 
 @Component({
   selector: 'app-home',
@@ -8,18 +8,54 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class HomeComponent  implements OnInit {
 
+  public show = true;
 
-  constructor() {
+  public mobile = false;
+
+  constructor(
+    breakpointObserver: BreakpointObserver
+  ) {
+
+    breakpointObserver
+      .observe([Breakpoints.HandsetLandscape, Breakpoints.HandsetPortrait])
+      .subscribe(result => {
+        if (result.matches) {
+          console.log(result);
+        }
+      });
+
+    const layoutChanges = breakpointObserver.observe('(max-width: 999px)');
+
+    layoutChanges.subscribe(result => {
+      if (result.matches) {
+        this.mobile = true;
+        this.show = false;
+      } else {
+        this.mobile = false;
+        this.show = true;
+      }
+
+    });
+  }
+
+
+  HomeSearch = '';
+
+  HomeMultFilter = {};
+
+  ngOnInit() {
 
   }
 
 
-  @Input() search: string;
+  Loadsearch(info) {
+    console.log('Loadsearch', info);
+    this.HomeSearch = info;
+  }
 
-
-
-  ngOnInit() {
-
+  LoadMultFilter(info) {
+    console.log('LoadMultFilter', info);
+    this.HomeMultFilter = info;
 
   }
 

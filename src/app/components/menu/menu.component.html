@@ -29,10 +29,10 @@
     </mat-expansion-panel-header>
     <form class="form-inline">
       <div class="form-group mb-2 mr-md-2">
-        <input type="text" class="form-control" [(ngModel)]="search" name="search"  (change)="SendSearch()" placeholder="ingrese el nombre del hotel">
+        <input type="text" class="form-control" [(ngModel)]="search" name="search"  placeholder="ingrese el nombre del hotel">
       </div>
       <div class="form-group mb-2 mr-md-2">
-        <button mat-raised-button color="primary">Aceptar</button>
+        <button mat-raised-button color="primary" (click)="SendSearch()" >Aceptar</button>
       </div>
     </form>
   </mat-expansion-panel>
