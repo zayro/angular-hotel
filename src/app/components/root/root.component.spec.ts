@@ -130,7 +130,7 @@ describe('RootComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('Testeando componentes inicializados', () => {
     expect(component).toBeTruthy();
   });
 });
