@@ -5,10 +5,12 @@ El exámen está compuesto por dos aplicaciones, un backend escrito en NodeJS el
 ##### Este punto consiste en armar un API REST en Node.js. El mismo será utilizado en el ejercicio 2.
 
 * La funcionalidad de listado y filtrado de hoteles debe estar soportada por la API consumida en la aplicación cliente.
-    * se crear 2 ambientes locales de desarrolo basados en el archivo statico data.json y 1 ambiente de produccion basado en base de datos postgresql 
+
+    * se crear 2 ambientes locales de desarrolo basados en el archivo statico data.json y 1 ambiente de produccion basado en base de datos postgresql.
 
 * A la hora de diseñar la estructura de la aplicación, tener en cuenta factores como escalabilidad, reutilización y separación de responsabilidades.
-    * 
+    
+    * se diseñaron componentes reutilizables y servicios.
  
 * Uso de configuraciones para ajustar como se ejecuta la aplicación en entornos productivosy de desarrollo.
 
@@ -20,7 +22,7 @@ El exámen está compuesto por dos aplicaciones, un backend escrito en NodeJS el
   - [npm start](#npm-start)
   - [npm test](#npm-test)
   
-
+https://github.com/zayro/angular-hotel.git
 
 
 ## Estructura de carpetas

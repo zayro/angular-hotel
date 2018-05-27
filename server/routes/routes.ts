@@ -7,7 +7,7 @@ module.exports = function(app) {
     // get an instance of the router for api routes
     // ---------------------------------------------------------
 
-    app.get('/hoteles', function(req, res) {
+    app.get('/admin/getAll/hoteles', function(req, res) {
         res.type('json');
         res.sendFile(path.normalize(__dirname + '/data.json'));
     });
