@@ -1,4 +1,50 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { Routes, RouterModule } from '@angular/router';
+import {DomSanitizer} from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
+
+
+import { RoutingComponents, AppRoutingModule } from '../../app.routing';
+
+import {
+  MatBadgeModule,
+  MatAutocompleteModule,
+  MatBottomSheetModule,
+  MatButtonModule,
+  MatButtonToggleModule,
+  MatCardModule,
+  MatCheckboxModule,
+  MatChipsModule,
+  MatDatepickerModule,
+  MatDialogModule,
+  MatDividerModule,
+  MatExpansionModule,
+  MatGridListModule,
+  MatIconModule,
+  MatInputModule,
+  MatFormFieldModule,
+  MatListModule,
+  MatMenuModule,
+  MatNativeDateModule,
+  MatPaginatorModule,
+  MatProgressBarModule,
+  MatProgressSpinnerModule,
+  MatRadioModule,
+  MatRippleModule,
+  MatSelectModule,
+  MatSidenavModule,
+  MatSliderModule,
+  MatSlideToggleModule,
+  MatSnackBarModule,
+  MatSortModule,
+  MatStepperModule,
+  MatTableModule,
+  MatTabsModule,
+  MatToolbarModule,
+  MatTooltipModule,
+  MatTreeModule
+} from '@angular/material';
+
 
 import { By } from '@angular/platform-browser';
 
@@ -72,7 +118,6 @@ describe('RootComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-
       declarations: [ RootComponent, RoutingComponents, FilterPipe ],
       imports: [
         BrowserAnimationsModule,
