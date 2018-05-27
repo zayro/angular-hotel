@@ -73,7 +73,6 @@ import { FilterPipe } from './pipe/filter.pipe';
     ReactiveFormsModule,
     AppRoutingModule,
     LayoutModule,
-    ReactiveFormsModule,
     CdkTableModule,
     MatAutocompleteModule,
     MatBadgeModule,
