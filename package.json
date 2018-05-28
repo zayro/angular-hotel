@@ -8,7 +8,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "db": "json-server --watch ./server/data/data.json",
+    "db": "json-server --watch ./server/routes/data.json",
     "serverlocal": "node ./server/server.ts",
     "production": "ng build -c --prod && npm run serverlocal",
     "develop": "ng build && npm run serverlocal",

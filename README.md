@@ -10,19 +10,21 @@ El exámen está compuesto por dos aplicaciones, un backend escrito en NodeJS el
 
 * A la hora de diseñar la estructura de la aplicación, tener en cuenta factores como escalabilidad, reutilización y separación de responsabilidades.
     
-    * se diseñaron componentes reutilizables y servicios.
+    * se diseñaron componentes reutilizables y el api orientado a servicios.
  
-* Uso de configuraciones para ajustar como se ejecuta la aplicación en entornos productivosy de desarrollo.
+* Uso de configuraciones para ajustar como se ejecuta la aplicación en entornos productivos y de desarrollo.
+
+    * se configuraron los valores por defecto en los diferentes entornos de desarrollo
 
 
 ## Tabla De Contenido
 
 - [Estructura de carpetas](#Estructura-de-carpetas)
-- [Scripts habilitados ](#Scripts-habilitados )
-  - [npm start](#npm-start)
-  - [npm test](#npm-test)
-  
-https://github.com/zayro/angular-hotel.git
+- [Instalacion](#instalacion)
+- [Entorno local de desarrollo](Entorno-local-de-desarrollo)
+- [Entorno remoto de produccion](Entorno-remoto-de-produccion)
+- [Desarrollo local](Desarrollo-local)
+- [Scripts-habilitados](Scripts-habilitados)
 
 
 ## Estructura de carpetas
@@ -48,72 +50,68 @@ app-hoteles/
 
 ## Instalacion
 
-#### `npm install`
+se debe tener instalador el software de GIT y NODEJS.
 
+ejecutar el siguiente comando
 
-instala los componenetes necesarios poder ejecutar los scripts
+``` shell
+git clone https://github.com/zayro/angular-hotel.git
+```
+ingresar al directorio angular-hotel y ejecutar el siguiente script
+
+``` shell
+npm install
+```
+instala los componenetes necesarios poder ejecutar los scripts de compilacion y ejecucion.
 
 ## Entorno local de desarrollo
 
 Este entorno es en cual desarrollador puede lanzar el aplicativo y realizar modificaciones en tiempo real en el cual la consola le ira mostrando los posibles de igual manera ir configurando los posibles test.
 
-### Scripts habilitados 
-
 En el directorio raiz del proyecto ejecular los siguientes comandos para arrancar el proyecto
 
+#### `npm run develop`
 
-#### `npm run db`
+el cual se encargara de compilar el proyecto y subir el servicio web con la siguiente url [http://localhost:3000](http://localhost:3000) 
 
-Ejecuta el prototipo del api basado en archivo data.json en el modo de desarrollo.
+## Entorno remoto de produccion
+
+El entorno de produccion se encarga conectarse directamente con el api creada que se conecta directamente.
+
+En el directorio raiz del proyecto ejecular los siguientes comandos para arrancar el proyecto.
+
+#### `npm run production`
+
+el cual se encargara de compilar el proyecto y subir el servicio web con la siguiente url [http://localhost:3000](http://localhost:3000) 
+
+## Desarrollo local
+
+Se debe ejecutar `npm run db`  el prototipo del api basado en archivo data.json en el modo de desarrollo.
 Abrir navegador y agregar la siguiente url [http://localhost:3000](http://localhost:3000) se puede observar que se encuentra corriendo el api local usando el componente [json-server](https://github.com/typicode/json-server)
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+se ejecuta `ng serve`  el comando para navegar en la siguiente url `http://localhost:4200/`. permite ver en vivo los cambias que se van desarrollando.
+
+con estos 2 scripts se compilan y manejan los entornos de desarrollo.
+
+### Scripts habilitados
+
+#### `npm test`
+
+Este comando permite observar los componentes en su funcionamiento.
+
+#### `npm lint`
+
+Este comando permite revisar posibles errores de codigo.
 
 #### `npm run serverlocal`
 
 Abrir navegador y agregar la siguiente url [http://localhost:3000](http://localhost:3000) se puede observar que se encuentra corriendo el api local. basado en [express](http://expressjs.com/es/4x/api.html)
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+## Despliegue entorno production heroku
 
-#### `npm start`
+el aplicativo se testeo con heroku subiendo el proyecto con un deploy en heroku manejando estandares de calidad en el desarrollo.
 
-Runs the app in the development mode.<br>
-Open [http://localhost:4200](http://localhost:4200) to view it in the browser.
-
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
-
-#### `npm test`
-
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](#running-tests) for more information.
-
-## Entorno remoto  de produccion
-
-## Development server
-
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-For the project to build, **these files must exist with exact filenames**:
-
-* `public/index.html` is the page template;
-* `src/index.js` is the JavaScript entry point.
-
-You can delete or rename the other files.
-
-You may create subdirectories inside `src`. For faster rebuilds, only files inside `src` are processed by Webpack.<br>
-You need to **put any JS and CSS files inside `src`**, otherwise Webpack won’t see them.
-
-Only files inside `public` can be used from `public/index.html`.<br>
-Read instructions below for using assets from JavaScript and HTML.
-
-You can, however, create more top-level directories.<br>
-They will not be included in the production build so you can use them for things like documentation.
-
-
+URL FRONTEND
+[https://angular-hotel.herokuapp.com/](https://angular-hotel.herokuapp.com/)
+URL BACKEND
+[https://angular-hotel-api.herokuapp.com/admin/getAll/hoteles](https://angular-hotel-api.herokuapp.com/admin/getAll/hoteles)
