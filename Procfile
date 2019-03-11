@@ -1,1 +1,1 @@
-web: npm run serverlocal
+web: npm run production

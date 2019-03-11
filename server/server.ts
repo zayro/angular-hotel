@@ -24,7 +24,7 @@ app.use(morgan('dev'));
 // configuration ===================================================
 // =================================================================
 
-const port = process.env.PORT || 3000; // used to create, sign, and verify tokens
+const port = process.env.PORT || 5000; // used to create, sign, and verify tokens
 
 
 

@@ -44,9 +44,9 @@ export class ListComponent extends Icon implements OnInit {
 
   getData() {
     // try some HTTP request:
-    this.api.get('/admin/getAll/hoteles').subscribe(
+    this.api.get('/hoteles').subscribe(
       (response: LoadData) => {
-        this.dataSource = response.data;
+        this.dataSource = response;
       },
       err => {
         console.error('Error occured.', err);
