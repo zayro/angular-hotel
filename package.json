@@ -17,7 +17,8 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "db": "json-server --watch ./server/routes/data.json",
-    "serverlocal": "node ./server/server.ts",
+    "serverlocal": "node ./server/server-local.ts",
+    "serveRoute": "node ./server/server.ts",
     "production": "ng build -c --prod && npm run serverlocal",
     "develop": "ng build && npm run serverlocal",
     "heroku-postbuild": "npm install && npm run production"
