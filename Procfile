@@ -1,2 +1,2 @@
-web: pm run production
+web: npm run production
 
