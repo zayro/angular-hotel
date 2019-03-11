@@ -6,7 +6,7 @@ const app = express();
 const bodyParser = require('body-parser');
 const morgan = require('morgan');
 const methodOverride = require('method-override');
-const dotenv = require('dotenv');
+
 
 
 // use body parser so we can get info from POST and/or URL parameters
@@ -38,7 +38,7 @@ if(process.env.NODE_ENV !== 'PRODUCTION'){
 
 }
 
-const port =  process.env.PORT || process.env.PORT || 5000;
+const port_data =  process.env.PORT || 5000;
 
 
 
@@ -54,5 +54,5 @@ require('./routes/routes.ts')(app);
 // =================================================================
 // start the server ================================================
 // =================================================================
-app.listen(port);
-console.log('Magic happens at http://localhost:' + port);
+app.listen(port_data);
+console.log('Magic happens at http://localhost:' + port_data);
