@@ -1,6 +1,14 @@
 {
   "name": "angular-hotel",
   "version": "1.0.0",
+  "description": "A Node.js FRONT ",
+  "private": true,
+  "engines": {
+    "node": "9.7.1",
+    "npm": "5.8.0"
+  },  
+  "author": "Marlon Zayro Arias Vargas",
+  "license": "ISC",  
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
