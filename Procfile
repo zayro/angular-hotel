@@ -1,2 +1,2 @@
-web: node ./server/server.ts
+web: bpm run production
 
