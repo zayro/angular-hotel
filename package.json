@@ -19,7 +19,7 @@
     "db": "json-server --watch ./server/routes/data.json",
     "serverlocal": "node ./server/server-local.ts",
     "serveRoute": "node ./server/server.ts",
-    "production": "ng build -c --prod && node ./server/server-local.ts  && node ./server/server.ts",
+    "production": "ng build -c --prod && node ./server/server.ts",
     "develop": "ng build && npm run serverlocal"
   },
   "dependencies": {

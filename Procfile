@@ -1,1 +1,2 @@
-web: node ./server/server-local.ts
+web: node ./server/server.ts
+
