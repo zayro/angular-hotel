@@ -1,2 +1,2 @@
-web: bpm run production
+web: pm run production
 
